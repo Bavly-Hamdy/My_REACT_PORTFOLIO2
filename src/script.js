@@ -85,18 +85,19 @@ modeToggleBtn.addEventListener('click', () => {
 updateIcon();
 
 /*==================== Change images when light mode is activated ====================*/
-const homeImg = document.querySelector('.home-img img');
-const aboutImg = document.querySelector('.about-img img');
-
 const updateImages = () => {
+    const homeImg = document.querySelector('.home-img img');
+    const aboutImg = document.querySelector('.about-img img');
+
     if (body.classList.contains('light-mode')) {
-        homeImg.src = 'imgs/home-v2.png';
-        aboutImg.src = 'imgs/about-v2.png';
+        homeImg.src = `${process.env.PUBLIC_URL}/imgs/home-v2.png`;
+        aboutImg.src = `${process.env.PUBLIC_URL}/imgs/about-v2.png`;
     } else {
-        homeImg.src = 'imgs/home.png';
-        aboutImg.src = 'imgs/about.png';
+        homeImg.src = `${process.env.PUBLIC_URL}/imgs/home.png`;
+        aboutImg.src = `${process.env.PUBLIC_URL}/imgs/about.png`;
     }
 };
+
 
 // Update images when the mode is toggled
 modeToggleBtn.addEventListener('click', updateImages);
